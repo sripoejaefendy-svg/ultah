@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Selamat Ulang Tahun</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Georgia', serif;
+      background: #fce8d5;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding-top: 50px;
+      min-height: 100vh;
+    }
+    .book {
+      width: 600px;
+      background: #fff7e6;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      border-radius: 10px;
+      padding: 40px;
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    .page {
+      margin-bottom: 40px;
+    }
+    h1 {
+      font-family: 'Cursive', serif;
+      font-size: 36px;
+      color: #d2691e;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 20px;
+      color: #6b4226;
+    }
+    img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      margin-top: 20px;
+      object-fit: cover;
+      border: 3px solid #d2691e;
+    }
+    audio {
+      display: none; /* sembunyikan audio player */
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 18px;
+      border-radius: 5px;
+      border: none;
+      cursor: pointer;
+      background-color: #f6c89f;
+      color: #6b4226;
+    }
+    button:hover {
+      background-color: #f2a66d;
+    }
+  </style>
+</head>
+<body>
+  <div class="book">
+    <!-- Halaman 1 -->
+    <div class="page" id="page1">
+      <h1>Selamat Ulang Tahun Sayang</h1>
+      <p>KE - 19</p>
+    </div>
+
+    <!-- Halaman 2 -->
+    <div class="page" id="page2">
+      <h1>Ucapan dari Aku</h1>
+      <p>Selamat Ulang Tahun Sayang Semoga Panjang Umur, Sehat Selalu, Dan Dimudahkan Semua Urusannya.</p>
+      <img src="foto-pacar.jpg" alt="Foto Sayang">
+
+      <!-- Audio Musik Ulang Tahun -->
+      <audio id="birthdayAudio" loop>
+        <source src="musik-ulang-tahun.mp3" type="audio/mpeg">
+      
+      </audio>
+
+      <!-- Audio Suara Perempuan -->
+      <audio id="voiceAudio">
+        <source src="ucapan-cewek.mp3" type="audio/wav">
+       
+      </audio>
+
+      <button onclick="playAudio()">Putar Musik & Ucapan</button>
+    </div>
+  </div>
+
+  <script>
+    function playAudio() {
+      const music = document.getElementById('birthdayAudio');
+      const voice = document.getElementById('voiceAudio');
+
+      music.play().catch(err => console.log("Musik error:", err));
+      voice.play().catch(err => console.log("Ucapan error:", err));
+    }
+  </script>
+</body>
+</html>
